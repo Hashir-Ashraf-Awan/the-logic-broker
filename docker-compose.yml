@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: tlb-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: logicbroker
+    ports:
+      - '5432:5432'
+    volumes:
+      - tlb-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres -d logicbroker']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  tlb-db-data:
