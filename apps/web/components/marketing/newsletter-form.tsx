@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
-import { cn, SITE } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -16,7 +16,7 @@ export function NewsletterForm() {
     setStatus('submitting');
     setError(null);
     try {
-      const res = await fetch(`${SITE.apiUrl}/v1/newsletter`, {
+      const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'footer' }),

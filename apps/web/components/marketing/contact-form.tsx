@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
-import { cn, SITE } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 import { z } from 'zod';
 
 const Schema = z.object({
@@ -41,7 +41,7 @@ export function ContactForm() {
 
     setStatus('submitting');
     try {
-      const res = await fetch(`${SITE.apiUrl}/v1/contact`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...parsed.data, source: '/contact' }),
