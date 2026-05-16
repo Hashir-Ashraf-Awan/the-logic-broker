@@ -134,7 +134,20 @@ export async function getFeaturedTestimonials(): Promise<TestimonialCard[]> {
         quote: true,
       },
     });
-    return rows.length ? rows : TESTIMONIAL_FALLBACK;
+    if (!rows.length) return TESTIMONIAL_FALLBACK;
+    return rows.map(
+      (r: {
+        authorName: string;
+        authorTitle: string | null;
+        company: string | null;
+        quote: string;
+      }) => ({
+        authorName: r.authorName,
+        authorTitle: r.authorTitle ?? '',
+        company: r.company ?? '',
+        quote: r.quote,
+      }),
+    );
   } catch {
     return TESTIMONIAL_FALLBACK;
   }
