@@ -123,7 +123,19 @@ export const MagneticButton = forwardRef<HTMLButtonElement | HTMLAnchorElement, 
       );
     }
 
-    const buttonRest = rest as ButtonHTMLAttributes<HTMLButtonElement>;
+    const buttonRest = rest as Omit<
+      ButtonHTMLAttributes<HTMLButtonElement>,
+      | 'onDrag'
+      | 'onDragStart'
+      | 'onDragEnd'
+      | 'onDragOver'
+      | 'onDragEnter'
+      | 'onDragLeave'
+      | 'onDragExit'
+      | 'onAnimationStart'
+      | 'onAnimationEnd'
+      | 'onAnimationIteration'
+    >;
     return (
       <m.button
         {...buttonRest}
