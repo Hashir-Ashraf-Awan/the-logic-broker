@@ -1,10 +1,13 @@
 import { PageShell } from '@/components/marketing/page-shell';
-import { ComingSoonSection } from '@/components/marketing/coming-soon-section';
+import { Architectures } from '@/components/marketing/ai-solutions/architectures';
+import { ArchitecturePrinciples } from '@/components/marketing/ai-solutions/principles';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata = buildMetadata({
   title: 'AI Solutions',
   path: '/ai-solutions',
+  description:
+    'Reference architectures for production AI — RAG, agentic workflows, evaluation loops, and real-time inference.',
 });
 
 export default function AiSolutionsPage() {
@@ -14,11 +17,8 @@ export default function AiSolutionsPage() {
       title="Reference architectures for the systems we build."
       intro="From retrieval to evaluation, here is how production AI actually fits together — and how we adapt these patterns to your stack."
     >
-      <ComingSoonSection
-        eyebrow="Patterns"
-        title="Interactive architecture diagrams"
-        body="Animated SVG diagrams for RAG, agentic workflows, eval loops, and real-time inference. Session 3."
-      />
+      <Architectures />
+      <ArchitecturePrinciples />
     </PageShell>
   );
 }
