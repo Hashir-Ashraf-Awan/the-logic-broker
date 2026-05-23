@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useMemo, useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
@@ -8,6 +8,7 @@ import { AnimatedCounter } from '@/components/primitives/animated-counter';
 import { EASE_SOFT } from '@/lib/animations';
 import { cn } from '@/lib/utils';
 import { CASE_STUDIES, INDUSTRIES, type Industry } from './data';
+import { IndustryCover } from './industry-cover';
 
 export function FilterGrid() {
   const [active, setActive] = useState<Industry>('All');
@@ -43,8 +44,8 @@ export function FilterGrid() {
                   className={cn(
                     'rounded-full border px-4 py-2 text-sm transition-all duration-control ease-soft',
                     active === ind
-                      ? 'border-white/[0.18] bg-white/[0.06] text-foreground'
-                      : 'border-white/[0.06] bg-white/[0.02] text-foreground/70 hover:border-white/[0.16] hover:bg-white/[0.04] hover:text-foreground',
+                      ? 'border-[hsl(var(--border-strong))] bg-muted/60 text-foreground'
+                      : 'border-border bg-card text-foreground/70 surface-hover hover:text-foreground',
                   )}
                 >
                   {ind}
@@ -64,53 +65,47 @@ export function FilterGrid() {
                 animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
                 exit={reduce ? { opacity: 0 } : { opacity: 0, y: -16 }}
                 transition={{ duration: 0.5, ease: EASE_SOFT }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7 transition-all duration-control ease-soft hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.04]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl surface transition-all duration-control ease-soft hover:-translate-y-1 surface-hover"
               >
-                <span
-                  aria-hidden
-                  className="absolute inset-x-0 -top-px h-px bg-aurora opacity-0 transition-opacity duration-control ease-soft group-hover:opacity-70"
-                />
+                <IndustryCover industry={study.industry} />
 
-                <div className="flex items-start justify-between">
-                  <span className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-xs text-foreground/70">
-                    {study.industry}
-                  </span>
-                  <ArrowUpRight className="h-4 w-4 text-foreground/40 transition-all duration-control ease-soft group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
-                </div>
+                <div className="flex flex-1 flex-col p-7 pt-5">
+                  <div className="flex items-start justify-between">
+                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">
+                      {study.timeline} engagement
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-foreground/40 transition-all duration-control ease-soft group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+                  </div>
 
-                <h3 className="mt-6 font-display text-xl font-semibold leading-snug tracking-tight">
-                  {study.headline}
-                </h3>
-                <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
-                  {study.client}
-                </p>
-
-                <div className="mt-6 border-t border-white/[0.06] pt-5">
-                  <p className="font-display text-4xl font-semibold leading-none tracking-tight text-gradient">
-                    <AnimatedCounter
-                      value={study.metric.value}
-                      prefix={study.metric.prefix}
-                      suffix={study.metric.suffix}
-                    />
+                  <h3 className="mt-4 font-display text-xl font-semibold leading-snug tracking-tight">
+                    {study.headline}
+                  </h3>
+                  <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">
+                    {study.client}
                   </p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                    {study.metric.label}
-                  </p>
-                </div>
 
-                <div className="mt-auto pt-6">
-                  <div className="hidden gap-1.5 transition-all duration-control ease-soft group-hover:flex">
-                    {study.stack.slice(0, 3).map((s) => (
+                  <div className="mt-6 border-t border-border pt-5">
+                    <p className="font-display text-4xl font-semibold leading-none tracking-tight text-gradient">
+                      <AnimatedCounter
+                        value={study.metric.value}
+                        prefix={study.metric.prefix}
+                        suffix={study.metric.suffix}
+                      />
+                    </p>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                      {study.metric.label}
+                    </p>
+                  </div>
+
+                  <div className="mt-auto flex flex-wrap gap-1.5 pt-6 opacity-0 transition-opacity duration-control ease-soft group-hover:opacity-100">
+                    {study.stack.slice(0, 4).map((s) => (
                       <span
                         key={s}
-                        className="rounded-full border border-white/[0.06] bg-background/60 px-2.5 py-0.5 text-[0.7rem] text-foreground/70"
+                        className="rounded-full border border-border bg-background/60 px-2.5 py-0.5 text-[0.7rem] text-foreground/70"
                       >
                         {s}
                       </span>
                     ))}
-                  </div>
-                  <div className="block text-xs text-muted-foreground group-hover:hidden">
-                    {study.timeline} engagement
                   </div>
                 </div>
               </m.article>

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
@@ -18,7 +18,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
       className={cn(
-        'inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-foreground/80 transition-colors duration-control ease-soft hover:bg-white/[0.07] hover:text-foreground',
+        'inline-flex h-9 w-9 items-center justify-center rounded-full surface text-foreground/80 transition-colors duration-control ease-soft hover:bg-muted/80 hover:text-foreground',
         className,
       )}
     >

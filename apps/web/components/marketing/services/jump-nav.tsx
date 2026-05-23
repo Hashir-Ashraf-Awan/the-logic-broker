@@ -1,4 +1,4 @@
-import { Reveal } from '@/components/primitives/reveal';
+﻿import { Reveal } from '@/components/primitives/reveal';
 import { Icon } from '@/components/primitives/icon';
 import { getServices } from '@/lib/data';
 
@@ -6,7 +6,7 @@ export async function JumpNav() {
   const services = await getServices();
 
   return (
-    <section className="border-y border-white/[0.06] bg-background-2/30">
+    <section className="border-y border-border bg-background-2/30">
       <div className="container-wide py-8">
         <Reveal>
           <div className="flex items-center gap-3 overflow-x-auto">
@@ -18,7 +18,7 @@ export async function JumpNav() {
                 <a
                   key={s.slug}
                   href={`#${s.slug}`}
-                  className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.02] px-4 py-2 text-sm text-foreground/80 transition-all duration-control ease-soft hover:border-white/[0.16] hover:bg-white/[0.04] hover:text-foreground"
+                  className="group inline-flex shrink-0 items-center gap-2 rounded-full surface px-4 py-2 text-sm text-foreground/80 transition-all duration-control ease-soft surface-hover hover:text-foreground"
                 >
                   <Icon
                     name={s.icon}

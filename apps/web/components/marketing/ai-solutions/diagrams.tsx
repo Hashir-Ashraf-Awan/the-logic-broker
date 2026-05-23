@@ -1,12 +1,12 @@
-'use client';
+﻿'use client';
 
 import { m, useReducedMotion } from 'framer-motion';
 import { FlowArrow } from './flow-arrow';
 
-const NODE_CLS = 'fill-white/[0.03] stroke-white/[0.1]';
-const NODE_HOT = 'fill-white/[0.06] stroke-[hsl(217_91%_60%/0.5)]';
-const TEXT_PRIMARY = 'fill-[hsl(0_0%_98%)] font-medium';
-const TEXT_MUTED = 'fill-[hsl(0_0%_65%)]';
+const NODE_CLS = 'fill-[hsl(var(--card))] stroke-[hsl(var(--border))]';
+const NODE_HOT = 'fill-[hsl(var(--card-elevated))] stroke-[hsl(217_91%_60%/0.5)]';
+const TEXT_PRIMARY = 'fill-[hsl(var(--foreground))] font-medium';
+const TEXT_MUTED = 'fill-[hsl(var(--muted-foreground))]';
 const FLOW = 'stroke-[hsl(217_91%_60%/0.7)]';
 const FLOW_SECONDARY = 'stroke-[hsl(262_83%_60%/0.7)]';
 

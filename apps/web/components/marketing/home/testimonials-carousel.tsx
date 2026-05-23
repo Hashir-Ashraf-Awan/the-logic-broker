@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useCallback, useEffect, useState } from 'react';
 import { m, AnimatePresence, useReducedMotion } from 'framer-motion';
@@ -59,7 +59,7 @@ export function TestimonialsCarousel({ items, autoMs = 6500 }: Props) {
             <figcaption className="mt-8 flex items-center gap-4">
               <span
                 aria-hidden
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-aurora text-sm font-semibold text-white ring-1 ring-white/[0.08]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-aurora text-sm font-semibold text-white ring-1 ring-border"
               >
                 {current.authorName
                   .split(' ')
@@ -90,7 +90,7 @@ export function TestimonialsCarousel({ items, autoMs = 6500 }: Props) {
               onClick={() => setI(idx)}
               className={cn(
                 'h-1.5 rounded-full transition-all duration-control ease-soft',
-                idx === i ? 'w-8 bg-aurora' : 'w-3 bg-white/[0.12] hover:bg-white/[0.2]',
+                idx === i ? 'w-8 bg-aurora' : 'w-3 bg-foreground/15 hover:bg-foreground/25',
               )}
             />
           ))}
@@ -100,7 +100,7 @@ export function TestimonialsCarousel({ items, autoMs = 6500 }: Props) {
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous testimonial"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-foreground/80 transition-all duration-control ease-soft hover:bg-white/[0.07] hover:text-foreground"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full surface text-foreground/80 transition-all duration-control ease-soft hover:bg-muted/80 hover:text-foreground"
           >
             <ArrowLeft className="h-4 w-4" />
           </button>
@@ -108,7 +108,7 @@ export function TestimonialsCarousel({ items, autoMs = 6500 }: Props) {
             type="button"
             onClick={() => go(1)}
             aria-label="Next testimonial"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-foreground/80 transition-all duration-control ease-soft hover:bg-white/[0.07] hover:text-foreground"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full surface text-foreground/80 transition-all duration-control ease-soft hover:bg-muted/80 hover:text-foreground"
           >
             <ArrowRight className="h-4 w-4" />
           </button>

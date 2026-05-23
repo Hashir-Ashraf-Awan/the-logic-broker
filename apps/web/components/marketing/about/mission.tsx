@@ -33,7 +33,7 @@ export function Mission() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {POINTS.map((p, i) => (
             <Reveal key={p.label} delay={i * 0.06}>
-              <div className="relative h-full overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
+              <div className="relative h-full overflow-hidden rounded-3xl surface p-7">
                 <span
                   aria-hidden
                   className="absolute inset-x-0 -top-px h-px bg-aurora opacity-50"

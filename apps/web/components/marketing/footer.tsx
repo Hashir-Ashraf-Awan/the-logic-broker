@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { Github, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
 import { Logo } from './logo';
 import { NewsletterForm } from './newsletter-form';
@@ -48,7 +48,7 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06] bg-background-2/40">
+    <footer className="relative border-t border-border bg-background-2/40">
       <div className="container-wide pt-24 pb-10">
         <div className="grid gap-12 lg:grid-cols-[1.5fr,2fr]">
           <div>
@@ -68,7 +68,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] text-foreground/80 transition-all duration-control ease-soft hover:scale-105 hover:bg-white/[0.08] hover:text-foreground"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full surface text-foreground/80 transition-all duration-control ease-soft hover:scale-105 hover:bg-muted/80 hover:text-foreground"
                 >
                   <Icon className="h-4 w-4" />
                 </a>
@@ -98,7 +98,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-8 md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 md:flex-row md:items-center">
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </p>

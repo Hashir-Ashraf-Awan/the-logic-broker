@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef } from 'react';
 import { m, useScroll, useTransform, useReducedMotion } from 'framer-motion';
@@ -66,7 +66,7 @@ export function Process() {
           {/* spine */}
           <div
             aria-hidden
-            className="absolute left-[28px] top-2 hidden h-[calc(100%-2rem)] w-px bg-white/[0.08] md:block"
+            className="absolute left-[28px] top-2 hidden h-[calc(100%-2rem)] w-px bg-muted/60 md:block"
           />
           <m.div
             aria-hidden
@@ -81,7 +81,7 @@ export function Process() {
                 <Reveal key={step.num} delay={i * 0.04}>
                   <li className="group relative grid grid-cols-[auto,1fr] gap-5 md:gap-7">
                     <div className="relative">
-                      <div className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.08] bg-background ring-1 ring-inset ring-white/[0.04] transition-all duration-control ease-soft group-hover:border-white/[0.18]">
+                      <div className="relative z-10 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-border bg-background ring-1 ring-inset ring-border transition-all duration-control ease-soft group-hover:border-[hsl(var(--border-strong))]">
                         <StepIcon className="h-5 w-5 text-foreground/80 transition-colors duration-control ease-soft group-hover:text-foreground" />
                       </div>
                     </div>

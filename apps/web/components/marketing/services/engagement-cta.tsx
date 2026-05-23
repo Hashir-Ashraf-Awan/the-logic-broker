@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Reveal } from '@/components/primitives/reveal';
 
@@ -7,7 +7,7 @@ export function EngagementCta() {
     <section className="section">
       <div className="container-wide">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-10 md:p-14">
+          <div className="relative overflow-hidden rounded-3xl surface p-10 md:p-14">
             <span
               aria-hidden
               className="absolute inset-x-0 -top-px h-px bg-aurora opacity-60"
@@ -40,7 +40,7 @@ export function EngagementCta() {
                 </Link>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.02] px-6 py-3 text-sm font-medium text-foreground/90 transition-colors duration-control ease-soft hover:bg-white/[0.06] hover:text-foreground"
+                  className="inline-flex items-center justify-center gap-2 rounded-full surface px-6 py-3 text-sm font-medium text-foreground/90 transition-colors duration-control ease-soft hover:bg-muted/60 hover:text-foreground"
                 >
                   See the work
                 </Link>

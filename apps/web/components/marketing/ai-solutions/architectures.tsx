@@ -1,4 +1,4 @@
-import { Reveal } from '@/components/primitives/reveal';
+﻿import { Reveal } from '@/components/primitives/reveal';
 import { SectionHeader } from '@/components/primitives/section-header';
 import {
   RagDiagram,
@@ -124,7 +124,7 @@ export function Architectures() {
                   </div>
 
                   <div className="lg:col-span-7">
-                    <div className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-4 md:p-6">
+                    <div className="relative overflow-hidden rounded-3xl surface p-4 md:p-6">
                       <span
                         aria-hidden
                         className="absolute inset-x-0 -top-px h-px bg-aurora opacity-50"

@@ -1,4 +1,4 @@
-import { Shield, Activity, GitMerge, Gauge } from 'lucide-react';
+﻿import { Shield, Activity, GitMerge, Gauge } from 'lucide-react';
 import { Reveal } from '@/components/primitives/reveal';
 import { SectionHeader } from '@/components/primitives/section-header';
 
@@ -44,12 +44,12 @@ export function ArchitecturePrinciples() {
             const PIcon = p.icon;
             return (
               <Reveal key={p.title} delay={i * 0.05}>
-                <div className="relative h-full overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7">
+                <div className="relative h-full overflow-hidden rounded-3xl surface p-7">
                   <span
                     aria-hidden
                     className="absolute inset-x-0 -top-px h-px bg-aurora opacity-50"
                   />
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-white/[0.08]">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-border">
                     <PIcon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 font-display text-lg font-semibold tracking-tight">

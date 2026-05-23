@@ -1,4 +1,4 @@
-import { Reveal } from '@/components/primitives/reveal';
+﻿import { Reveal } from '@/components/primitives/reveal';
 import { Icon } from '@/components/primitives/icon';
 import { getServices } from '@/lib/data';
 
@@ -162,7 +162,7 @@ export async function DeepDives() {
                 >
                   <div className="lg:col-span-7">
                     <div className="flex items-center gap-3">
-                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-white/[0.08]">
+                      <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-border">
                         <Icon name={service.icon} className="h-5 w-5" />
                       </span>
                       <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">
@@ -217,7 +217,7 @@ export async function DeepDives() {
                   </div>
 
                   <div className="lg:col-span-5">
-                    <div className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-8">
+                    <div className="relative overflow-hidden rounded-3xl surface p-8">
                       <span
                         aria-hidden
                         className="absolute inset-x-0 -top-px h-px bg-aurora opacity-50"
@@ -232,7 +232,7 @@ export async function DeepDives() {
                         {detail.outcome.detail}
                       </p>
 
-                      <div className="mt-6 border-t border-white/[0.06] pt-5">
+                      <div className="mt-6 border-t border-border pt-5">
                         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">
                           Capability stack
                         </p>
@@ -240,7 +240,7 @@ export async function DeepDives() {
                           {service.features.map((f) => (
                             <li
                               key={f}
-                              className="rounded-full border border-white/[0.06] bg-white/[0.02] px-3 py-1 text-xs text-foreground/70"
+                              className="rounded-full surface px-3 py-1 text-xs text-foreground/70"
                             >
                               {f}
                             </li>

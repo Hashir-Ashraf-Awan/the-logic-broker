@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef, useState } from 'react';
 import { m, useReducedMotion, useScroll, useTransform } from 'framer-motion';
@@ -82,7 +82,7 @@ export function Hero() {
           <m.div variants={fadeUp} className="mb-7 flex justify-center">
             <a
               href="/ai-solutions"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] py-1.5 pl-1.5 pr-4 text-xs text-foreground/80 backdrop-blur-md transition-colors duration-control ease-soft hover:bg-white/[0.06]"
+              className="group inline-flex items-center gap-2 rounded-full surface py-1.5 pl-1.5 pr-4 text-xs text-foreground/80 backdrop-blur-md transition-colors duration-control ease-soft hover:bg-muted/60"
             >
               <span className="inline-flex items-center gap-1 rounded-full bg-aurora px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-white">
                 <Sparkles className="h-3 w-3" />
@@ -144,9 +144,9 @@ export function Hero() {
         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 30 }}
         animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: EASE_SOFT, delay: 0.6 }}
-        className="absolute inset-x-0 bottom-0 hidden border-t border-white/[0.06] bg-background/40 backdrop-blur-md md:block"
+        className="absolute inset-x-0 bottom-0 hidden border-t border-border bg-background/40 backdrop-blur-md md:block"
       >
-        <div className="container-wide grid grid-cols-3 divide-x divide-white/[0.06]">
+        <div className="container-wide grid grid-cols-3 divide-x divide-border">
           {[
             { value: '60+', label: 'Production systems shipped' },
             { value: '$200M+', label: 'Combined value unlocked for clients' },

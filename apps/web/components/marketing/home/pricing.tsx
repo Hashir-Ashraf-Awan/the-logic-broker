@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { m } from 'framer-motion';
@@ -92,7 +92,7 @@ export function Pricing() {
 
         <Reveal>
           <div className="mb-12 flex justify-center">
-            <div className="relative inline-flex rounded-full border border-white/[0.08] bg-white/[0.03] p-1 text-sm">
+            <div className="relative inline-flex rounded-full surface p-1 text-sm">
               {(['monthly', 'annual'] as const).map((c) => (
                 <button
                   key={c}
@@ -141,8 +141,8 @@ function TierCard({ tier, cadence }: { tier: Tier; cadence: Cadence }) {
       className={cn(
         'relative flex h-full flex-col overflow-hidden rounded-3xl border p-8 transition-all duration-control ease-soft hover:-translate-y-1',
         tier.popular
-          ? 'border-white/[0.16] bg-gradient-to-b from-white/[0.05] to-white/[0.01] ring-1 ring-accent-blue/30'
-          : 'border-white/[0.06] bg-white/[0.02] hover:border-white/[0.16] hover:bg-white/[0.04]',
+          ? 'border-[hsl(var(--border-strong))] bg-gradient-to-b from-muted/40 to-card ring-1 ring-accent-blue/30'
+          : 'border-border bg-card surface-hover',
       )}
     >
       {tier.popular && (
@@ -188,7 +188,7 @@ function TierCard({ tier, cadence }: { tier: Tier; cadence: Cadence }) {
           'mt-9 inline-flex h-12 w-full items-center justify-center rounded-full text-sm font-medium tracking-tight transition-all duration-control ease-soft',
           tier.popular
             ? 'bg-aurora text-white shadow-[0_8px_30px_-8px_hsl(var(--accent-blue)/0.6)] hover:shadow-[0_12px_40px_-8px_hsl(var(--accent-purple)/0.7)]'
-            : 'border border-white/[0.08] bg-white/[0.03] text-foreground/90 hover:bg-white/[0.07] hover:text-foreground',
+            : 'surface text-foreground/90 hover:bg-muted/80 hover:text-foreground',
         )}
       >
         {tier.cta.label}

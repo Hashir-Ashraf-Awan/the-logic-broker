@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { m } from 'framer-motion';
@@ -125,9 +125,9 @@ export function Tools() {
         <div className="space-y-6">
           {CATEGORIES.map((cat, ci) => (
             <Reveal key={cat.label} delay={ci * 0.04}>
-              <div className="relative overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-6 md:p-8">
+              <div className="relative overflow-hidden rounded-3xl surface p-6 md:p-8">
                 <div className="mb-5 flex items-center gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-white/[0.08]">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-aurora/15 ring-1 ring-border">
                     <cat.icon className="h-4 w-4 text-foreground/85" aria-hidden />
                   </span>
                   <div>
@@ -172,8 +172,8 @@ function ToolTile({ tool, delay }: { tool: Tool; delay: number }) {
       transition={{ duration: 0.4, ease: EASE_SOFT, delay }}
       whileHover={{ y: -2 }}
       className={cn(
-        'group inline-flex h-11 items-center gap-2 rounded-full border border-white/[0.06] bg-white/[0.02] px-5 transition-colors duration-control ease-soft',
-        'hover:border-white/[0.18] hover:bg-white/[0.05]',
+        'group inline-flex h-11 items-center gap-2 rounded-full surface px-5 transition-colors duration-control ease-soft',
+        'hover:border-[hsl(var(--border-strong))] hover:bg-muted/80',
       )}
     >
       {showImage ? (

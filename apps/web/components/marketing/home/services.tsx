@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { Icon } from '@/components/primitives/icon';
 import { Reveal } from '@/components/primitives/reveal';
@@ -39,7 +39,7 @@ function ServiceTile({ service, index }: { service: ServiceCard; index: number }
   return (
     <Link
       href={`/services#${service.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7 transition-all duration-control ease-soft hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.04]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl surface p-7 transition-all duration-control ease-soft hover:-translate-y-1 surface-hover"
     >
       {/* hover glow */}
       <span
@@ -54,7 +54,7 @@ function ServiceTile({ service, index }: { service: ServiceCard; index: number }
       <span className="absolute inset-x-0 -top-px h-px bg-aurora opacity-0 transition-opacity duration-control ease-soft group-hover:opacity-70" />
 
       <div className="relative flex items-start justify-between">
-        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 text-foreground ring-1 ring-white/[0.08]">
+        <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-aurora/15 text-foreground ring-1 ring-border">
           <Icon name={service.icon} className="h-5 w-5" />
         </span>
         <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">

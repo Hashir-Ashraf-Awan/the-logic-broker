@@ -1,24 +1,41 @@
 import type { ReactNode } from 'react';
 import { Reveal } from '@/components/primitives/reveal';
 import { AnimatedGradient } from '@/components/primitives/animated-gradient';
+import { HeroExploreStrip, type ExploreItem } from './hero-explore-strip';
 
 interface Props {
   eyebrow?: string;
   title: string;
   intro?: string;
+  /** Optional numbered carousel/strip rendered at the foot of the hero. */
+  explore?: ExploreItem[];
+  /** Slug of the active item — given a soft highlight in the strip. */
+  exploreActive?: string;
   children?: ReactNode;
 }
 
 /**
- * Standard top-of-page hero used by inner marketing routes (About, Services,
- * etc.). Lets us stand the routes up immediately with the right design
- * language while detailed content lands in later sessions.
+ * Standard top-of-page hero used by inner marketing routes. Optionally
+ * renders a numbered "explore" strip across the bottom of the hero —
+ * mirrors the Addo-style hero/section pattern.
  */
-export function PageShell({ eyebrow, title, intro, children }: Props) {
+export function PageShell({
+  eyebrow,
+  title,
+  intro,
+  explore,
+  exploreActive,
+  children,
+}: Props) {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-40 pb-24">
+      <section className="relative isolate overflow-hidden pt-40 pb-20 md:pb-28">
         <AnimatedGradient className="opacity-60" />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[60vh] bg-radial-fade"
+        />
+
         <div className="container-wide relative">
           <Reveal>
             {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
@@ -32,6 +49,12 @@ export function PageShell({ eyebrow, title, intro, children }: Props) {
             )}
           </Reveal>
         </div>
+
+        {explore && explore.length > 0 && (
+          <div className="container-wide relative mt-16 md:mt-24">
+            <HeroExploreStrip items={explore} activeSlug={exploreActive} />
+          </div>
+        )}
       </section>
       {children}
     </>

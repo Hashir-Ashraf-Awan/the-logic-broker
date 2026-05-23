@@ -1,4 +1,5 @@
 import { PageShell } from '@/components/marketing/page-shell';
+import { SITE_EXPLORE } from '@/components/marketing/hero-explore-strip';
 import { Mission } from '@/components/marketing/about/mission';
 import { Principles } from '@/components/marketing/about/principles';
 import { Team } from '@/components/marketing/about/team';
@@ -17,6 +18,8 @@ export default function AboutPage() {
       eyebrow="About"
       title="A senior AI delivery team for ambitious enterprises."
       intro="We are operators turned builders. The Logic Broker exists to make AI projects that survive the messy middle — from boardroom buy-in to the 03:00 alert."
+      explore={SITE_EXPLORE}
+      exploreActive="about"
     >
       <Mission />
       <Principles />

@@ -56,7 +56,7 @@ export function Principles() {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {PRINCIPLES.map((p, i) => (
             <Reveal key={p.num} delay={i * 0.05}>
-              <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7 md:p-8">
+              <article className="relative flex h-full flex-col overflow-hidden rounded-3xl surface p-7 md:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">
                     {p.num}
@@ -72,7 +72,7 @@ export function Principles() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
-                <blockquote className="mt-5 border-l border-white/[0.08] pl-4 text-sm italic leading-relaxed text-foreground/70">
+                <blockquote className="mt-5 border-l border-border pl-4 text-sm italic leading-relaxed text-foreground/70">
                   {p.moment}
                 </blockquote>
               </article>

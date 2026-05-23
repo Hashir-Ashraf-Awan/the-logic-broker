@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { forwardRef, useRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { m, useMotionValue, useSpring, useTransform } from 'framer-motion';
@@ -12,7 +12,7 @@ const variants: Record<Variant, string> = {
   primary:
     'bg-aurora text-white shadow-[0_8px_30px_-8px_hsl(var(--accent-blue)/0.6)] hover:shadow-[0_12px_40px_-8px_hsl(var(--accent-purple)/0.7)]',
   ghost:
-    'bg-white/[0.04] text-foreground border border-white/[0.08] hover:bg-white/[0.08]',
+    'bg-muted/60 text-foreground border border-border hover:bg-muted/80',
   outline:
     'border border-foreground/15 text-foreground hover:bg-foreground/[0.04]',
 };

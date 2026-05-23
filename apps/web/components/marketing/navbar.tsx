@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -77,7 +77,7 @@ export function Navbar() {
                   {active && (
                     <m.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-white/[0.06]"
+                      className="absolute inset-0 -z-10 rounded-full bg-muted/60"
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -96,7 +96,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03] md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full surface md:hidden"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
@@ -121,14 +121,14 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center justify-between rounded-xl px-3 py-3 text-base text-foreground/90 hover:bg-white/[0.04]"
+                    className="flex items-center justify-between rounded-xl px-3 py-3 text-base text-foreground/90 hover:bg-muted/60"
                   >
                     <span>{item.label}</span>
                     <span aria-hidden className="text-muted-foreground">→</span>
                   </Link>
                 ))}
               </nav>
-              <div className="mt-3 flex items-center justify-between border-t border-white/[0.06] pt-3">
+              <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
                 <ThemeToggle />
                 <MagneticButton href="/contact" size="sm">
                   Book consultation

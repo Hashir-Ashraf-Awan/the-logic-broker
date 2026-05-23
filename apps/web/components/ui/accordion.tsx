@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
@@ -14,7 +14,7 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      'overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] transition-colors duration-control ease-soft data-[state=open]:bg-white/[0.04]',
+      'overflow-hidden rounded-2xl surface transition-colors duration-control ease-soft data-[state=open]:bg-muted/60',
       className,
     )}
     {...props}

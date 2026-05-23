@@ -1,4 +1,4 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { SectionHeader } from '@/components/primitives/section-header';
 import { Reveal } from '@/components/primitives/reveal';
@@ -138,7 +138,7 @@ export function CaseStudies() {
             <Reveal key={s.slug} delay={i * 0.06}>
               <Link
                 href={`/case-studies#${s.slug}`}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/[0.06] bg-white/[0.02] p-7 transition-all duration-control ease-soft hover:-translate-y-1 hover:border-white/[0.16] hover:bg-white/[0.04]"
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl surface p-7 transition-all duration-control ease-soft hover:-translate-y-1 surface-hover"
               >
                 <span
                   aria-hidden
@@ -146,7 +146,7 @@ export function CaseStudies() {
                 />
 
                 <div className="relative flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1 text-xs text-foreground/80">
+                  <span className="inline-flex items-center gap-2 rounded-full surface px-3 py-1 text-xs text-foreground/80">
                     {s.industry}
                   </span>
                   <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground/70">
@@ -162,7 +162,7 @@ export function CaseStudies() {
                   {s.summary}
                 </p>
 
-                <dl className="relative mt-8 grid grid-cols-3 gap-3 border-t border-white/[0.06] pt-6">
+                <dl className="relative mt-8 grid grid-cols-3 gap-3 border-t border-border pt-6">
                   {s.metrics.map((m) => (
                     <div key={m.label}>
                       <dt className="text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground/70">

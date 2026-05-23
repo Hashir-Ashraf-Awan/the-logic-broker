@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, type FormEvent } from 'react';
 import { ArrowRight, Check, Loader2 } from 'lucide-react';
@@ -89,7 +89,7 @@ export function ContactForm() {
           <select
             name="budget"
             defaultValue=""
-            className="h-11 w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground transition-colors duration-control ease-soft focus:border-white/[0.18] focus:bg-white/[0.05] focus:outline-none"
+            className="h-11 w-full rounded-xl surface px-3 text-sm text-foreground transition-colors duration-control ease-soft focus:border-[hsl(var(--border-strong))] focus:bg-muted/40 focus:outline-none"
           >
             <option value="">Select a range</option>
             {BUDGETS.map((b) => (
@@ -109,7 +109,7 @@ export function ContactForm() {
           rows={5}
           required
           className={cn(
-            'block w-full resize-none rounded-xl border border-white/[0.08] bg-white/[0.03] p-3 text-sm leading-relaxed text-foreground transition-colors duration-control ease-soft focus:border-white/[0.18] focus:bg-white/[0.05] focus:outline-none',
+            'block w-full resize-none rounded-xl surface p-3 text-sm leading-relaxed text-foreground transition-colors duration-control ease-soft focus:border-[hsl(var(--border-strong))] focus:bg-muted/40 focus:outline-none',
             errors.message && 'border-red-500/40',
           )}
           placeholder="Stage, the outcome you want, anything else that helps us prepare."
@@ -165,7 +165,7 @@ function Field({ name, label, type = 'text', autoComplete, required, error }: Fi
         autoComplete={autoComplete}
         required={required}
         className={cn(
-          'h-11 w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-control ease-soft focus:border-white/[0.18] focus:bg-white/[0.05] focus:outline-none',
+          'h-11 w-full rounded-xl surface px-3 text-sm text-foreground placeholder:text-muted-foreground/60 transition-colors duration-control ease-soft focus:border-[hsl(var(--border-strong))] focus:bg-muted/40 focus:outline-none',
           error && 'border-red-500/40',
         )}
       />
